@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
 	try {
+		mongoose.set('strictQuery', false);
 		const conn = await mongoose.connect(process.env.REACT_APP_MONGO);
 
 		console.log(`MongoDB connected: ${conn.connection.host}`.cyan.underline);
